@@ -12,6 +12,12 @@ set(assessment_sources
 	rotateArray.h
 	rotateArray.cpp
 	rotateArray.txt
+	oddOccurancesInArray.h
+	oddOccurancesInArray.cpp
+	oddOccurancesInArray.txt
+
+	tester.h
+	tester.cpp
 	)	
 
 add_executable(${PROJECT_NAME}
