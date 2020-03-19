@@ -24,7 +24,18 @@ set(assessment_sources
 	tapeEquilibrium.h
 	tapeEquilibrium.cpp
 	tapeEquilibrium.txt
-
+	frogRiverOne.h
+	frogRiverOne.cpp
+	frogRiverOne.txt
+	maxCounters.h
+	maxCounters.cpp
+	maxCounters.txt
+	missingInteger.h
+	missingInteger.cpp
+	missingInteger.txt
+	permCheck.h
+	permCheck.cpp
+	permCheck.txt
 
 	tester.h
 	tester.cpp

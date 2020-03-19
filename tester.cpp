@@ -7,6 +7,10 @@
 #include "frogJmp.h"
 #include "permMissingElem.h"
 #include "tapeEquilibrium.h"
+#include "frogRiverOne.h"
+#include "maxCounters.h"
+#include "missingInteger.h"
+#include "permCheck.h"
 
 tester::tester()
 {
@@ -137,6 +141,82 @@ bool tester::testTapeEquilibrium()
 	groundTruths = { 1, 0, 1000};
 
 	test(obj, input, groundTruths, groundTypeIndicator, "testTapeEquilibrium");
+
+	return status;
+}
+
+bool tester::testFrogRiverOne()
+{
+	bool status = true;
+
+	// provide input and ground truth data to test on template function
+	frogRiverOne obj;
+	std::vector<int> inputX;
+	std::vector<std::vector<int> > inputA;
+	std::vector<int > groundTruths;
+	int groundTypeIndicator = -1;
+
+	inputX = { 5, 10, 1, 20, 5 };
+	inputA = { { 1, 3, 1, 4, 2, 3, 5, 4 }, {}, {1}, {1}, {10, 10, 10, 10, 10, 10, 10, 10, 10, 10} };
+	groundTruths = { 6, -1 , 0, -1, -1};
+
+	test(obj, inputX, inputA, groundTruths, groundTypeIndicator, "testFrogRiverOne");
+
+	return status;
+}
+
+bool tester::testMaxCounters()
+{
+	bool status = true;
+
+	// provide input and ground truth data to test on template function
+	maxCounters obj;
+	std::vector<int> inputN;
+	std::vector<std::vector<int> > inputA;
+	std::vector<std::vector<int> > groundTruths;
+	int groundTypeIndicator = -1;
+
+	inputN = { 5, 10, 2, 1 };
+	inputA = { { 3, 4, 4, 6, 1, 4, 4 }, {1}, {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}, {2,2,2,2,2,2} };
+	groundTruths = { { 3, 2, 2, 4, 2 }, {1,0,0,0,0,0,0,0,0,0}, {18,0}, {0} };
+
+	test(obj, inputN, inputA, groundTruths, "testMaxCounters");
+
+	return status;
+}
+
+bool tester::testMissingInteger()
+{
+	bool status = true;
+
+	// provide input and ground truth data to test on template function
+	missingInteger obj;
+	std::vector<std::vector<int> > input;
+	std::vector<int > groundTruths;
+	int groundTypeIndicator = -1;
+
+	input = { { 3, 1, 7, 4, 3 }, {83}, {-1000000, -1000}, {9999999, 1000000}, {-10, -2, 10, 1000000} };
+	groundTruths = { 2, 1, 1, 1, 1};
+
+	test(obj, input, groundTruths, groundTypeIndicator, "testMissingInteger");
+
+	return status;
+}
+
+bool tester::testCheckPerm()
+{
+	bool status = true;
+
+	// provide input and ground truth data to test on template function
+	permCheck obj;
+	std::vector<std::vector<int> > input;
+	std::vector<int > groundTruths;
+	int groundTypeIndicator = -1;
+
+	input = { { 4, 1, 3, 2 }, { 83 },{ 1, 2, 2, 5, 4, 3}};
+	groundTruths = { 1, 0, 0 };
+
+	test(obj, input, groundTruths, groundTypeIndicator, "testMissingInteger");
 
 	return status;
 }

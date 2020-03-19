@@ -11,6 +11,10 @@ int main()
 	t.testFrogJmp();
 	t.testPermMissingElem();
 	t.testTapeEquilibrium();
+	t.testFrogRiverOne();
+	t.testMaxCounters();
+	t.testMissingInteger();
+	t.testCheckPerm();
 
 	system("pause");
 	return 0;
