@@ -12,7 +12,9 @@ public:
 	bool testRotateArray();
 	bool testOddOccurancesInArray();
 	bool testFrogJmp();
-	
+	bool testPermMissingElem();
+	bool testTapeEquilibrium();
+
 	template<class T, typename I, typename GVec, typename G, typename N>
 	bool test(T obj, I inputs, GVec groundT, G groundS, N testName)
 	{
@@ -23,7 +25,7 @@ public:
 			if (result == groundT[i])
 				std::cout << "  " << i + 1 << ") passed" << std::endl;
 			else
-				std::cout << "  " << i + 1 << ") ------> failed" << std::endl;
+				std::cout << "  " << i + 1 << ") ------> failed, got " << result << " expected " << groundT[i] << std::endl;
 		}
 
 		std::cout << std::endl;
@@ -47,6 +49,23 @@ public:
 				std::cout << "  " << i + 1 << ") passed" << std::endl;
 			else
 				std::cout << "  " << i + 1 << ") ------> failed" << std::endl;
+		}
+
+		std::cout << std::endl;
+		return true;
+	}
+
+	template<class T, typename I, typename G, typename N>
+	bool test(T obj, I inputs1, I inputs2, I inputs3, G groundT, N testName)
+	{
+		std::cout << testName << std::endl;
+		for (int i = 0; i < inputs1.size(); i++)
+		{
+			int result = obj.solution(inputs1[i], inputs2[i], inputs3[i]);
+			if (result == groundT[i])
+				std::cout << "  " << i + 1 << ") passed" << std::endl;
+			else
+				std::cout << "  " << i + 1 << ") ------> failed, got " << result << " expected " << groundT[i] << std::endl;
 		}
 
 		std::cout << std::endl;

@@ -9,6 +9,8 @@ int main()
 	t.testRotateArray();
 	t.testOddOccurancesInArray();
 	t.testFrogJmp();
+	t.testPermMissingElem();
+	t.testTapeEquilibrium();
 
 	system("pause");
 	return 0;

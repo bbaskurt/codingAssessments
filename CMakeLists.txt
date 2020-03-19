@@ -15,6 +15,16 @@ set(assessment_sources
 	oddOccurancesInArray.h
 	oddOccurancesInArray.cpp
 	oddOccurancesInArray.txt
+	frogJmp.h
+	frogJmp.cpp
+	frogJmp.txt
+	permMissingElem.h
+	permMissingElem.cpp
+	permMissingElem.txt
+	tapeEquilibrium.h
+	tapeEquilibrium.cpp
+	tapeEquilibrium.txt
+
 
 	tester.h
 	tester.cpp
