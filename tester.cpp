@@ -11,6 +11,10 @@
 #include "maxCounters.h"
 #include "missingInteger.h"
 #include "permCheck.h"
+#include "countDiv.h"
+#include "genomicRangeQuery.h"
+#include "minAvgTwoSlice.h"
+#include "passingCars.h"
 
 tester::tester()
 {
@@ -98,13 +102,14 @@ bool tester::testFrogJmp()
 	std::vector<int> inputsY;
 	std::vector<int> inputsD;
 	std::vector<int> groundTruths;
+	int returnType = -1;
 
 	inputsX = { 10, 40, 10, 1, 1, 1};
 	inputsY = { 85, 40, 1000000000, 1000000000, 1000000000, 1000000000 };
 	inputsD = { 30, 1, 1100, 2, 99, 1};
 	groundTruths = { 3, 0, 909091, 499999998, 987654222, 999999999};
 
-	test(obj, inputsX, inputsY, inputsD, groundTruths, "testFrogJmp");
+	test(obj, inputsX, inputsY, inputsD, groundTruths, returnType, "testFrogJmp");
 
 	return status;
 }
@@ -217,6 +222,88 @@ bool tester::testCheckPerm()
 	groundTruths = { 1, 0, 0 };
 
 	test(obj, input, groundTruths, groundTypeIndicator, "testMissingInteger");
+
+	return status;
+}
+
+bool tester::testCountDiv()
+{
+	bool status = true;
+
+	// provide input and ground truth data to test on template function
+	countDiv obj;
+	std::vector<int > inputA;
+	std::vector<int > inputB;
+	std::vector<int > inputK;
+	std::vector<int > groundTruths;
+	int returnType = -1;
+
+	inputA = { 100, 100, 0, 2000000000, 14 };
+	inputB = { 100, 100, 0, 2000000000, 28 };
+	inputK = { 1,   7,   7 , 13, 7};
+	groundTruths = { 1, 0, 1, 0, 3};
+
+	test(obj, inputA, inputB, inputK, groundTruths, returnType, "testCountDiv");
+
+	return status;
+}
+
+bool tester::testgenomicRangeQuery()
+{
+	bool status = true;
+
+	// provide input and ground truth data to test on template function
+	genomicRangeQuery obj;
+	std::vector<std::string > inputS;
+	std::vector<std::vector<int> > inputP;
+	std::vector<std::vector<int> > inputQ;
+	std::vector<std::vector<int> > groundTruths;
+	std::vector<int> groundTypeIndicator = {};
+
+	inputS = { "CAGCCTA", "CAGCCTA", "A"};
+	inputP = { {5}, {0}, {0} };
+	inputQ = { {5}, {0}, {0} };
+	groundTruths = { {4}, {2}, {1} };
+
+	test(obj, inputS, inputP, inputQ, groundTruths, groundTypeIndicator, "testgenomicRangeQuery");
+
+	return status;
+}
+
+bool tester::testMinAvgTwoSlice()
+{
+	bool status = true;
+
+	// provide input and ground truth data to test on template function
+	minAvgTwoSlice obj;
+	std::vector<std::vector<int> > input;
+	std::vector<int> groundTruths;
+	int groundTypeIndicator = -1;
+
+	input = { {4,2,2,5,1,5,8}, {10,10,10,1,5}, {100,50, 1, 5, 1, 10, 20} };
+	groundTruths = { 1, 3, 2};
+
+
+	test(obj, input, groundTruths, groundTypeIndicator, "testMinAvgTwoSlice");
+
+	return status;
+}
+
+bool tester::testPassingCars()
+{
+	bool status = true;
+
+	// provide input and ground truth data to test on template function
+	passingCars obj;
+	std::vector<std::vector<int> > input;
+	std::vector<int> groundTruths;
+	int groundTypeIndicator = -1;
+
+	input = { { 0 },{ 0,1 },{ 0,1,1}, {0,1,0,1,1} };
+	groundTruths = { 0, 1, 2,5 };
+
+
+	test(obj, input, groundTruths, groundTypeIndicator, "testPassingCars");
 
 	return status;
 }

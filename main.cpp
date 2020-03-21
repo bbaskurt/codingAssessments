@@ -15,6 +15,10 @@ int main()
 	t.testMaxCounters();
 	t.testMissingInteger();
 	t.testCheckPerm();
+	t.testCountDiv();
+	t.testgenomicRangeQuery();
+	t.testMinAvgTwoSlice();
+	t.testPassingCars();
 
 	system("pause");
 	return 0;

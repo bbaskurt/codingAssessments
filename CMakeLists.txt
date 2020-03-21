@@ -36,6 +36,18 @@ set(assessment_sources
 	permCheck.h
 	permCheck.cpp
 	permCheck.txt
+	countDiv.h
+	countDiv.cpp
+	countDiv.txt
+	passingCars.h
+	passingCars.cpp
+	passingCars.txt
+	minAvgTwoSlice.h
+	minAvgTwoSlice.cpp
+	minAvgTwoSlice.txt
+	genomicRangeQuery.h
+	genomicRangeQuery.cpp
+	genomicRangeQuery.txt
 
 	tester.h
 	tester.cpp
