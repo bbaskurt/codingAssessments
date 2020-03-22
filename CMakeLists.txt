@@ -48,6 +48,31 @@ set(assessment_sources
 	genomicRangeQuery.h
 	genomicRangeQuery.cpp
 	genomicRangeQuery.txt
+	distinct.h
+	distinct.cpp
+	distinct.txt
+	maxProductOfThree.h
+	maxProductOfThree.cpp
+	maxProductOfThree.txt
+	numberOfDiscIntersections.h
+	numberOfDiscIntersections.cpp
+	numberOfDiscIntersections.txt
+	triangle.h
+	triangle.cpp
+	triangle.txt
+	brackets.h
+	brackets.cpp
+	brackets.txt
+	fish.h
+	fish.cpp
+	fish.txt
+	nesting.h
+	nesting.cpp
+	nesting.txt
+	stoneWall.h
+	stoneWall.cpp
+	stoneWall.txt
+
 
 	tester.h
 	tester.cpp

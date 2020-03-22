@@ -15,6 +15,14 @@
 #include "genomicRangeQuery.h"
 #include "minAvgTwoSlice.h"
 #include "passingCars.h"
+#include "distinct.h"
+#include "maxProductOfThree.h"
+#include "numberOfDiscIntersections.h"
+#include "triangle.h"
+#include "brackets.h"
+#include "fish.h"
+#include "nesting.h"
+#include "stoneWall.h"
 
 tester::tester()
 {
@@ -302,8 +310,155 @@ bool tester::testPassingCars()
 	input = { { 0 },{ 0,1 },{ 0,1,1}, {0,1,0,1,1} };
 	groundTruths = { 0, 1, 2,5 };
 
-
 	test(obj, input, groundTruths, groundTypeIndicator, "testPassingCars");
+
+	return status;
+}
+
+bool tester::testDistinct()
+{
+	bool status = true;
+
+	// provide input and ground truth data to test on template function
+	distinct obj;
+	std::vector<std::vector<int> > input;
+	std::vector<int> groundTruths;
+	int groundTypeIndicator = -1;
+
+	input = { { },{ 1,1,1,1,1 },{ -1000000, -10000, -1000000, 10000000 } };
+	groundTruths = { 0, 1, 3};
+
+	test(obj, input, groundTruths, groundTypeIndicator, "testDistinct");
+
+	return status;
+}
+
+bool tester::testMaxProductOfThree()
+{
+	bool status = true;
+
+	// provide input and ground truth data to test on template function
+	maxProductOfThree obj;
+	std::vector<std::vector<int> > input;
+	std::vector<int> groundTruths;
+	int groundTypeIndicator = -1;
+
+	input = { { 2, -10, -20, -5, -30 }, { -3, 1, 2, -2, 5,6 },{ 0,1,2,3,4,5,6 },{ -1000, -10, -6, -1, -3 },{ -1000, 20, -2, 1, 0, 10, 5 }, {10, 6, 0, -9, -7}, {10,8,8, 1, -9},{ 10,8,8, 1, -10,-10 } };
+	groundTruths = { 1200, 60, 120, -18, 40000,630,640, 1000};
+
+	test(obj, input, groundTruths, groundTypeIndicator, "testMaxProductOfThree");
+
+	return status;
+}
+
+bool tester::testNumberOfDiscIntersections()
+{
+	bool status = true;
+
+	// provide input and ground truth data to test on template function
+	numberOfDiscIntersections obj;
+	std::vector<std::vector<int> > input;
+	std::vector<int> groundTruths;
+	int groundTypeIndicator = -1;
+
+	input = { { 1,5,2,1,4,0 }, {1,1,1}, { },{ 1} };
+	groundTruths = { 11,3, 0, 0};
+
+	test(obj, input, groundTruths, groundTypeIndicator, "testNumberOfDiscIntersections");
+
+	return status;
+}
+
+bool tester::testTriangle()
+{
+	bool status = true;
+
+	// provide input and ground truth data to test on template function
+	triangle obj;
+	std::vector<std::vector<int> > input;
+	std::vector<int> groundTruths;
+	int groundTypeIndicator = -1;
+
+	input = { { 0 },{ 0,1 },{ 0,1,1 },{ 0,1,0,1,1 } };
+	groundTruths = { 0, 1, 2,5 };
+
+	test(obj, input, groundTruths, groundTypeIndicator, "testTriangle");
+
+	return status;
+}
+
+bool tester::testBrackets()
+{
+	bool status = true;
+
+	// provide input and ground truth data to test on template function
+	brackets obj;
+	std::vector<std::vector<int> > input;
+	std::vector<int> groundTruths;
+	int groundTypeIndicator = -1;
+
+	input = { { 4,2,2,5,1,5,8 },{ 10,10,10,1,5 },{ 100,50, 1, 5, 1, 10, 20 } };
+	groundTruths = { 1, 3, 2 };
+
+
+	test(obj, input, groundTruths, groundTypeIndicator, "testBrackets");
+
+	return status;
+}
+
+bool tester::testFish()
+{
+	bool status = true;
+
+	// provide input and ground truth data to test on template function
+	fish obj;
+	std::vector<std::vector<int> > input;
+	std::vector<int> groundTruths;
+	int groundTypeIndicator = -1;
+
+	input = { { 4,2,2,5,1,5,8 },{ 10,10,10,1,5 },{ 100,50, 1, 5, 1, 10, 20 } };
+	groundTruths = { 1, 3, 2 };
+
+
+	test(obj, input, groundTruths, groundTypeIndicator, "testFish");
+
+	return status;
+}
+
+bool tester::testNesting()
+{
+	bool status = true;
+
+	// provide input and ground truth data to test on template function
+	nesting obj;
+	std::vector<std::vector<int> > input;
+	std::vector<int> groundTruths;
+	int groundTypeIndicator = -1;
+
+	input = { { 4,2,2,5,1,5,8 },{ 10,10,10,1,5 },{ 100,50, 1, 5, 1, 10, 20 } };
+	groundTruths = { 1, 3, 2 };
+
+
+	test(obj, input, groundTruths, groundTypeIndicator, "testNesting");
+
+	return status;
+}
+
+bool tester::testStoneWall()
+{
+	bool status = true;
+
+	// provide input and ground truth data to test on template function
+	stoneWall obj;
+	std::vector<std::vector<int> > input;
+	std::vector<int> groundTruths;
+	int groundTypeIndicator = -1;
+
+	input = { { 4,2,2,5,1,5,8 },{ 10,10,10,1,5 },{ 100,50, 1, 5, 1, 10, 20 } };
+	groundTruths = { 1, 3, 2 };
+
+
+	test(obj, input, groundTruths, groundTypeIndicator, "testStoneWall");
 
 	return status;
 }

@@ -22,6 +22,14 @@ public:
 	bool testgenomicRangeQuery();
 	bool testMinAvgTwoSlice();
 	bool testPassingCars();
+	bool testDistinct();
+	bool testMaxProductOfThree();
+	bool testNumberOfDiscIntersections();
+	bool testTriangle();
+	bool testBrackets();
+	bool testFish();
+	bool testNesting();
+	bool testStoneWall();
 
 	template<class T, typename I, typename G, typename R, typename N>
 	bool test(T obj, I inputs, G groundT, R returnType, N testName)

@@ -19,6 +19,14 @@ int main()
 	t.testgenomicRangeQuery();
 	t.testMinAvgTwoSlice();
 	t.testPassingCars();
+	t.testDistinct();
+	t.testMaxProductOfThree();
+	t.testNumberOfDiscIntersections();
+	//t.testTriangle();
+	//t.testBrackets();
+	//t.testFish();
+	//t.testNesting();
+	//t.testStoneWall();
 
 	system("pause");
 	return 0;
