@@ -14,28 +14,12 @@ triangle::~triangle()
 
 int triangle::solution(std::vector<int> &A)
 {
-	int Asize = A.size();
-	std::unordered_map<int, int> westCounts;
-	int westCounter = 0;
-	for (int i = Asize - 1; i >= 0; i--)
-	{
-		if (A[i] == 1)
-		{
-			westCounter++;
-		}
-		westCounts[i] = westCounter;
-	}
+	sort(A.begin(), A.end());
 
-	int passing = 0;
-	for (int i = 0; i < Asize; i++)
-	{
-		if (A[i] == 0)
-		{
-			passing += westCounts[i];
-			if (passing > 1000000000)
-				return -1;
+	for (unsigned int i = 2; i < A.size(); i++) {
+		if (A[i - 2] > 0 && A[i - 2] > A[i] - A[i - 1]) {
+			return 1;
 		}
 	}
-	return passing;
-
+	return 0;
 }

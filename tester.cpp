@@ -379,8 +379,8 @@ bool tester::testTriangle()
 	std::vector<int> groundTruths;
 	int groundTypeIndicator = -1;
 
-	input = { { 0 },{ 0,1 },{ 0,1,1 },{ 0,1,0,1,1 } };
-	groundTruths = { 0, 1, 2,5 };
+	input = { { 10,2,5,1,8,20 },{ 10,50,5,1 }};
+	groundTruths = { 1,0 };
 
 	test(obj, input, groundTruths, groundTypeIndicator, "testTriangle");
 
