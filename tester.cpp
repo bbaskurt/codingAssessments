@@ -393,12 +393,12 @@ bool tester::testBrackets()
 
 	// provide input and ground truth data to test on template function
 	brackets obj;
-	std::vector<std::vector<int> > input;
+	std::vector<std::string > input;
 	std::vector<int> groundTruths;
 	int groundTypeIndicator = -1;
 
-	input = { { 4,2,2,5,1,5,8 },{ 10,10,10,1,5 },{ 100,50, 1, 5, 1, 10, 20 } };
-	groundTruths = { 1, 3, 2 };
+	input = {"()[{}]", "()", "", "(((((())))","[{(){}}]"};
+	groundTruths = { 1, 1, 1, 0, 1};
 
 
 	test(obj, input, groundTruths, groundTypeIndicator, "testBrackets");

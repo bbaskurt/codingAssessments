@@ -12,30 +12,37 @@ brackets::~brackets()
 {
 }
 
-int brackets::solution(std::vector<int> &A)
+int brackets::solution(std::string &S)
 {
-	int Asize = A.size();
-	std::unordered_map<int, int> westCounts;
-	int westCounter = 0;
-	for (int i = Asize - 1; i >= 0; i--)
+	if (S.empty())
+		return 1;
+	std::unordered_map<char, char> pairs;
+	pairs['}'] = '{';
+	pairs[')'] = '(';
+	pairs[']'] = '[';
+	std::vector<char> openChars;
+	int Ssize = S.size();
+	for (int i = 0; i < Ssize; i++)
 	{
-		if (A[i] == 1)
+		std::unordered_map<char, char>::iterator finder = pairs.find(S[i]);
+		// current char is a closing char
+		if (finder != pairs.end())
 		{
-			westCounter++;
+			if (openChars.empty())
+				return 0;
+			if (pairs[S[i]] != openChars[openChars.size() - 1])
+				return 0;
+			else
+				openChars.erase(openChars.begin() + openChars.size() - 1);
 		}
-		westCounts[i] = westCounter;
-	}
-
-	int passing = 0;
-	for (int i = 0; i < Asize; i++)
-	{
-		if (A[i] == 0)
+		else
 		{
-			passing += westCounts[i];
-			if (passing > 1000000000)
-				return -1;
+			// opening char 
+			openChars.push_back(S[i]);
 		}
 	}
-	return passing;
+	if (!openChars.empty())
+		return 0;
 
+	return 1;
 }

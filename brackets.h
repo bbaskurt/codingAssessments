@@ -8,6 +8,6 @@ public:
 	brackets();
 	~brackets();
 
-	int solution(std::vector<int> &A);
+	int solution(std::string &S);
 };
 

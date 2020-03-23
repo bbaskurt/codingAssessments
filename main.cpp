@@ -23,7 +23,7 @@ int main()
 	t.testMaxProductOfThree();
 	t.testNumberOfDiscIntersections();
 	t.testTriangle();
-	//t.testBrackets();
+	t.testBrackets();
 	//t.testFish();
 	//t.testNesting();
 	//t.testStoneWall();
