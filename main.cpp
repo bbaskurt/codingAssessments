@@ -24,8 +24,8 @@ int main()
 	t.testNumberOfDiscIntersections();
 	t.testTriangle();
 	t.testBrackets();
-	//t.testFish();
-	//t.testNesting();
+	t.testFish();
+	t.testNesting();
 	//t.testStoneWall();
 
 	system("pause");

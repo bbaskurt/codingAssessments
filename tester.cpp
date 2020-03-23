@@ -412,15 +412,17 @@ bool tester::testFish()
 
 	// provide input and ground truth data to test on template function
 	fish obj;
-	std::vector<std::vector<int> > input;
+	std::vector<std::vector<int> > inputA;
+	std::vector<std::vector<int> > inputB;
 	std::vector<int> groundTruths;
 	int groundTypeIndicator = -1;
 
-	input = { { 4,2,2,5,1,5,8 },{ 10,10,10,1,5 },{ 100,50, 1, 5, 1, 10, 20 } };
-	groundTruths = { 1, 3, 2 };
+	inputA = { {1,2,3}, { 4,3,2,1,5},{ 4,3,6,1,5 }, {1,2,3,4,6}, {5,6,9,1,2}, {1,2,3,4,5,6,7,8,9} };
+	inputB = { {0,0,1}, { 0,1,0,0,0 },{ 0,1,0,0,0 }, {0,0,0,0,0}, {1,1,1,1,1}, {0,0,0,0,0,0,0,0,1} };
+	groundTruths = { 1, 2, 4, 5, 5, 1 };
 
 
-	test(obj, input, groundTruths, groundTypeIndicator, "testFish");
+	test(obj, inputA, inputB, groundTruths, groundTypeIndicator, "testFish");
 
 	return status;
 }
@@ -431,12 +433,12 @@ bool tester::testNesting()
 
 	// provide input and ground truth data to test on template function
 	nesting obj;
-	std::vector<std::vector<int> > input;
+	std::vector<std::string > input;
 	std::vector<int> groundTruths;
 	int groundTypeIndicator = -1;
 
-	input = { { 4,2,2,5,1,5,8 },{ 10,10,10,1,5 },{ 100,50, 1, 5, 1, 10, 20 } };
-	groundTruths = { 1, 3, 2 };
+	input = { "()(())", "()", "", "(((((())))","((()()))" };
+	groundTruths = { 1, 1, 1, 0, 1 };
 
 
 	test(obj, input, groundTruths, groundTypeIndicator, "testNesting");

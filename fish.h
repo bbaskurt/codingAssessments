@@ -8,6 +8,6 @@ public:
 	fish();
 	~fish();
 
-	int solution(std::vector<int> &A);
+	int solution(std::vector<int> &A, std::vector<int> &B);
 };
 

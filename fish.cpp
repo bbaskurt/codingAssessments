@@ -12,30 +12,44 @@ fish::~fish()
 {
 }
 
-int fish::solution(std::vector<int> &A)
+int fish::solution(std::vector<int> &A, std::vector<int> &B)
 {
-	int Asize = A.size();
-	std::unordered_map<int, int> westCounts;
-	int westCounter = 0;
-	for (int i = Asize - 1; i >= 0; i--)
+	// write your code in C++14 (g++ 6.2.0)
+	// survivors: initially equal to total number of fishes
+	int survivors = (int)A.size();
+
+	// upstream fishs stack
+	std::vector<int> usfish = {};
+
+	for (unsigned int i = 0; i<A.size(); i++)
 	{
-		if (A[i] == 1)
+		// if upstream : goes to stack
+		if (B[i] == 1)
 		{
-			westCounter++;
+			usfish.push_back(i);
 		}
-		westCounts[i] = westCounter;
+		// if downstream : fights with upstream fishes
+		else
+		{
+			int j = (int)usfish.size() - 1;
+			while (usfish.size()>0 && j>-1)
+			{
+				// upstream is bigger: ds fish dies, check next ds fish
+				if (A[usfish[j]] > A[i])
+				{
+					survivors--;
+					break;
+				}
+				// upstream is smaller: us fish dies, next us fish fights
+				else
+				{
+					survivors--;
+					usfish.erase(usfish.begin() + j);
+					j--;
+				}
+			}
+		}
 	}
 
-	int passing = 0;
-	for (int i = 0; i < Asize; i++)
-	{
-		if (A[i] == 0)
-		{
-			passing += westCounts[i];
-			if (passing > 1000000000)
-				return -1;
-		}
-	}
-	return passing;
-
+	return survivors;
 }
