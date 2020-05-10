@@ -27,7 +27,9 @@ int main()
 	t.testFish();
 	t.testNesting();
 	//t.testStoneWall();
+	t.testDominator();
+	t.testEquiLeader();
 
 	system("pause");
 	return 0;
-}
+}				

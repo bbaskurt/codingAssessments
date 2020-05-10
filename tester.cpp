@@ -23,6 +23,8 @@
 #include "fish.h"
 #include "nesting.h"
 #include "stoneWall.h"
+#include "dominator.h"
+#include "equiLeader.h"
 
 tester::tester()
 {
@@ -461,6 +463,50 @@ bool tester::testStoneWall()
 
 
 	test(obj, input, groundTruths, groundTypeIndicator, "testStoneWall");
+
+	return status;
+}
+
+bool tester::testDominator()
+{
+	bool status = true;
+
+	// provide input and ground truth data to test on template function
+	dominator obj;
+	std::vector<std::vector<int> > input;
+	std::vector<int> groundTruths;
+	int groundTypeIndicator = -1;
+
+	/*[-1, 0, -1, -5, 0, 1, 2, 3, 4, 5]
+	[1]
+	[1, 1, 1]
+	[-1, 0, -1, -5, -1, 1, -1, -1, 4, -1]
+	*/
+
+	input = { { -1, 0, -1, -5, 0, 1, 2, 3, 4, 5 },{ 1 },{ 1, 1, 1 }, { -1, 0, -1, -5, -1, 1, -1, -1, 4, -1 } };
+	groundTruths = { -1, 0, 2, 9 };
+
+
+	test(obj, input, groundTruths, groundTypeIndicator, "testDominator");
+
+	return status;
+}
+
+bool tester::testEquiLeader()
+{
+	bool status = true;
+
+	// provide input and ground truth data to test on template function
+	equiLeader obj;
+	std::vector<std::vector<int> > input;
+	std::vector<int> groundTruths;
+	int groundTypeIndicator = -1;
+
+	input = { { 4,3,4,4,4,2 },{ 1}};
+	groundTruths = { 2, 0};
+
+
+	test(obj, input, groundTruths, groundTypeIndicator, "testEquiLeader");
 
 	return status;
 }

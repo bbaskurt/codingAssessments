@@ -30,6 +30,8 @@ public:
 	bool testFish();
 	bool testNesting();
 	bool testStoneWall();
+	bool testDominator();
+	bool testEquiLeader();
 
 	template<class T, typename I, typename G, typename R, typename N>
 	bool test(T obj, I inputs, G groundT, R returnType, N testName)

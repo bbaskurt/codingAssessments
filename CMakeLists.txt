@@ -72,7 +72,12 @@ set(assessment_sources
 	stoneWall.h
 	stoneWall.cpp
 	stoneWall.txt
-
+	dominator.h
+	dominator.cpp
+	dominator.txt
+	equiLeader.h
+	equiLeader.cpp
+	equiLeader.txt
 
 	tester.h
 	tester.cpp
